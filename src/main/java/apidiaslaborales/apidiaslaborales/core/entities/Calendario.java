@@ -2,7 +2,8 @@ package apidiaslaborales.apidiaslaborales.core.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -16,7 +17,8 @@ import org.hibernate.annotations.GenericGenerator;
 @Table(name = "Calendario")
 public class Calendario {
     @Id
-    @GenericGenerator(name = "secuencia_Calendario", strategy = "increment")
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "calendario_secuencia")
+    @GenericGenerator(name = "calendario_secuencia", strategy = "increment")
     private long id;
 
     @Column(name = "Fecha", nullable = false)
