@@ -1,12 +1,12 @@
-package apidiaslaborales.aplication;
+package apidiaslaborales.apidiaslaborales.aplication;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import apidiaslaborales.apidiaslaborales.core.entities.Tipo;
-import apidiaslaborales.apidiaslaborales.core.interfaces.repository.ITipoRepository;
-import apidiaslaborales.apidiaslaborales.core.interfaces.service.ITipoService;
+import apidiaslaborales.apidiaslaborales.core.entities.tipo;
+import apidiaslaborales.apidiaslaborales.core.repository.ITipoRepository;
+import apidiaslaborales.apidiaslaborales.core.service.ITipoService;
 
 @Service
 public class TipoServicio implements ITipoService {
@@ -18,18 +18,18 @@ public class TipoServicio implements ITipoService {
     }
 
     @Override
-    public List<Tipo> listar() {
+    public List<tipo> listar() {
         return repository.findAll();
     }
 
     @Override
-    public Tipo obtener(Long id) {
+    public tipo obtener(Long id) {
 
         throw new UnsupportedOperationException("Unimplemented method 'obtener'");
     }
 
     @Override
-    public List<Tipo> buscar(String tipo) {
+    public List<tipo> buscar(String tipo) {
 
         throw new UnsupportedOperationException("Unimplemented method 'buscar'");
     }

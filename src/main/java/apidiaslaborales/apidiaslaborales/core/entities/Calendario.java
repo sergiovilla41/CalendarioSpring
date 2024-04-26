@@ -14,8 +14,8 @@ import java.util.Date;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-@Table(name = "Calendario")
-public class Calendario {
+@Table(name = "calendario")
+public class calendario {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "calendario_secuencia")
     @GenericGenerator(name = "calendario_secuencia", strategy = "increment")
@@ -26,26 +26,27 @@ public class Calendario {
 
     @ManyToOne
     @JoinColumn(name = "IdTipo", nullable = false)
-    private Tipo tipo;
+    private tipo tipo;
 
     @Column(name = "Descripcion")
     private String descripcion;
 
-    public Calendario() {
+    public calendario() {
     }
 
-    public Calendario(Long id, Date fecha, Tipo tipo, String descripcion) {
+    public calendario(long id, Date fecha, apidiaslaborales.apidiaslaborales.core.entities.tipo tipo,
+            String descripcion) {
         this.id = id;
         this.fecha = fecha;
         this.tipo = tipo;
         this.descripcion = descripcion;
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -57,11 +58,11 @@ public class Calendario {
         this.fecha = fecha;
     }
 
-    public Tipo getTipo() {
+    public tipo getTipo() {
         return tipo;
     }
 
-    public void setTipo(Tipo tipo) {
+    public void setTipo(tipo tipo) {
         this.tipo = tipo;
     }
 
